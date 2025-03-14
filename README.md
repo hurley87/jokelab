@@ -1,24 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Chat Application
 
-## Getting Started
+A modern chat application built with Next.js, React, and the AI SDK.
 
-First, run the development server:
+## Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   yarn install
+   ```
+3. Create a `.env.local` file in the root directory with your OpenAI API key:
+   ```
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
+4. Run the development server:
+   ```bash
+   yarn dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Real-time chat interface with OpenAI's GPT models
+- Streaming responses for a better user experience
+- Modern UI with responsive design
+- Error handling and user feedback
+- Stop generation functionality
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Troubleshooting
+
+If you encounter issues with the chat not responding:
+
+1. Make sure your OpenAI API key is correctly set in the `.env.local` file
+2. Check the browser console for any error messages
+3. Ensure you have an active internet connection
+4. Verify that your OpenAI API key has sufficient credits
+
+## Technologies Used
+
+- Next.js
+- React
+- AI SDK (@ai-sdk/react, @ai-sdk/openai)
+- Tailwind CSS
+- Lucide React (for icons)
 
 ## Learn More
 
