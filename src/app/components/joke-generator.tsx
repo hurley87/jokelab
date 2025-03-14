@@ -11,9 +11,7 @@ import {
   Star, 
   Tag, 
   MessageSquare, 
-  Mic, 
   Zap, 
-  Radio, 
   Lightbulb,
   Volume2,
   Sparkles,
@@ -59,10 +57,9 @@ export default function JokeGenerator() {
   
   // Animation states
   const [isRobotTalking, setIsRobotTalking] = useState(false);
-  const [showSpotlight, setShowSpotlight] = useState(false);
   
   // Main joke generation chat
-  const { messages, input, handleInputChange, handleSubmit, status, stop, error, reload, setMessages } =
+  const { messages, input, handleInputChange, handleSubmit, status, stop, error, setMessages } =
     useChat({
       api: '/api/chat',
       body: {
@@ -112,15 +109,6 @@ export default function JokeGenerator() {
       setIsRobotTalking(false);
     }
   }, [status]);
-  
-  // Spotlight effect when joke is delivered
-  useEffect(() => {
-    if (messages.length > 0 && status === 'ready') {
-      setShowSpotlight(true);
-    } else {
-      setShowSpotlight(false);
-    }
-  }, [messages, status]);
 
   // Handle preference change
   const handlePreferenceChange = (key: keyof JokePreferences, value: string | boolean) => {
@@ -337,7 +325,7 @@ export default function JokeGenerator() {
                       Program my joke parameters and activate my comedy routines!
                     </p>
                     <p className="text-center text-blue-400 italic mt-2">
-                      "Humor circuits fully charged!"
+                      {`"Humor circuits fully charged!"`}
                     </p>
                   </div>
                 ) : (
